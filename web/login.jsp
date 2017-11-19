@@ -7,8 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-    
+
     <head>
 
         <meta charset="utf-8">
@@ -17,7 +18,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>UHC-APS - Appointment Scheduling System</title>
+        <title>Login - UHC-APS</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -66,9 +67,6 @@
                         <li>
                             <a href="contact.php">Contact</a>
                         </li>
-                        <li>
-                            <a href="logout.php">Logout</a>
-                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -85,13 +83,27 @@
             </div>            
             <div class="row">
                 <h3 align="center">UHC Appointment Scheduling System</h3>
-            </div>
-            <hr>
+            </div>            
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <a class="btn btn-danger btn-block" href="createAppointment.php">Make Appointment</a>                                   
-                    <a class="btn btn-danger btn-block" href="myAppointment.php">My Appointments</a>                                   
-                    <a class="btn btn-danger btn-block" href="feedback.php">Send Feedback</a>
+                <div class="panel panel-default col-xs-12">                    
+                    <div class="panel-body">
+                        <form class="form-horizontal" method="post" action="">
+                            <div class="form-group-sm">
+                                <label for="acid">ACID</label>
+                                <input class="form-control" name="acid" id="acid" placeholder="ACID" type="text">
+                            </div>
+                            <br>
+                            <div class="form-group-sm">
+                                <label>Password</label>
+                                <input class="form-control" name="password" id="password" placeholder="**********" type="password">
+                            </div>
+                            <br>
+                            <div class="form-group-sm" align="center">
+                                <button class="btn btn-danger " name="submit" type="submit">Login</button>
+                            </div>
+                            <span></span>
+                        </form>
+                    </div>
                 </div>
             </div>
             <!-- /.row -->
