@@ -82,7 +82,7 @@
                 </div>
             </div>            
             <div class="row">
-                <h3 align="center">UHC Appointment Scheduling System</h3>
+                <h3 align="center">Unversity Health Centre Management System</h3>
             </div>            
             <div class="row">
                 <div class="panel panel-default col-xs-12">                    
