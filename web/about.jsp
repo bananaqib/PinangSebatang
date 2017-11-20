@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<%-- 
+    Document   : about
+    Created on : Nov 21, 2017, 1:55:19 AM
+    Author     : kerol
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <head>
 
         <meta charset="utf-8">
@@ -15,7 +16,7 @@ and open the template in the editor.
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>UHC-MS - Unversity Health Centre Management System</title>
+        <title>About - UHC-APS</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -50,22 +51,19 @@ and open the template in the editor.
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">UHC-MS</a>
+                    <a class="navbar-brand" href="index.php">UHC APS</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="">About</a>
+                            <a href="about.php">About</a>
                         </li>
                         <li>
                             <a href="#">Services</a>
                         </li>
                         <li>
-                            <a href="">Contact</a>
-                        </li>
-                        <li>
-                            <a href="">Logout</a>
+                            <a href="contact.php">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -76,24 +74,30 @@ and open the template in the editor.
 
         <!-- Page Content -->
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <img src="images/UTM.gif" alt="logo" width="100" height="100">
-                </div>
-            </div>            
-            <div class="row">
-                <h3 align="center">Unversity Health Centre Management System</h3>
-            </div>
+            <h3>About</h3>
             <hr>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <a class="btn btn-danger btn-block" href="createAppointment.php">Make Appointment</a>                                   
-                    <a class="btn btn-danger btn-block" href="myAppointment.php">My Appointments</a>                                   
-                    <a class="btn btn-danger btn-block" href="feedback.php">Send Feedback</a>
-                </div>
-            </div>
-            <!-- /.row -->
-
+            <h4>UTM Health Centre Background</h4>
+            <p>
+                UTM Health Center was established in 1972 to provide medical care and health facilities to ensure the health and well-being of society at the University and surrounding areas. The unit is managed by four medical doctors, a dentist and several other support staff and assisted by a trained clinical staff.
+            </p>
+            <p>
+                At its inception in 1975, this unit operated by a physician and several assistants. In 2005 there were three doctors and a dentist. There were places two medical office and two dentists that can not be filled. Part-time medical services policy initiated by the unit since 1995 has been able to overcome the shortage of doctors. There are five medical doctors and one dentist and part-time at the Campus Skudai a medical doctor at the City Campus. They were assisted by a trained clinical staff and other support staff.
+            </p>
+            <p>
+                Beginning September 1993, the University Health Centre was officially recognized as a clinical panel UTM for employees. Under this regulation all university employees can have access to the UTM Health Center. In addition to the UTM Health Centre also provides facilities to performing services outside the family as students, workers and visitors to private universities, university.
+            </p>
+            <br>
+            <h4>Our Goal</h4>
+            <p>
+                The aim of this unit is to create a healthy university community physically, mentally and socially. Apart from medical and dental care, this unit is also involved directly or indirectly in disease control and promotion of community health campus.
+            </p>
+            <br>
+            <h4>Our Objective</h4>
+            <ul>
+                <li>To provide medical and dental care quality and effective for students and the UTM</li>
+                <li>To provide effective control of communicable diseases at the UTM campus</li>
+                <li>To help establish the university community and around the healthy physical, mental and social.</li>
+            </ul>
         </div>
         <!-- /.container -->
 

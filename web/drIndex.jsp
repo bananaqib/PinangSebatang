@@ -1,9 +1,11 @@
+<%-- 
+    Document   : doctorIndex
+    Created on : Nov 20, 2017, 7:38:33 PM
+    Author     : kerol
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
 <html lang="en">
     
