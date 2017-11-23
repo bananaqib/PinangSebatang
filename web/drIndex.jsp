@@ -89,9 +89,9 @@
             <hr>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <a class="btn btn-danger btn-block" href="createAppointment.php">Make Appointment</a>                                   
-                    <a class="btn btn-danger btn-block" href="myAppointment.php">My Appointments</a>                                   
-                    <a class="btn btn-danger btn-block" href="feedback.php">Send Feedback</a>
+                    <a class="btn btn-danger btn-block" href="drAppointment.jsp">Appointments</a>                                   
+                    <a class="btn btn-danger btn-block" href="profile.jsp"></a>                                   
+                    <!--<a class="btn btn-danger btn-block" href="feedback.php">Send Feedback</a>-->
                 </div>
             </div>
             <!-- /.row -->

@@ -7,11 +7,8 @@ package model;
 
 /**
  *
- * @author kerol
+ * @author PCUSER
  */
-public class appointment {
-
-    public appointment() {
-    }
+public class medication {
     
 }
