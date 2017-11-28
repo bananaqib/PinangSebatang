@@ -1,14 +1,15 @@
 <%-- 
-    Document   : doctorIndex
-    Created on : Nov 20, 2017, 7:38:33 PM
-    Author     : kerol
+    Document   : login
+    Created on : Nov 16, 2017, 12:37:05 PM
+    Author     : PCUSER
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-    
+
     <head>
 
         <meta charset="utf-8">
@@ -17,7 +18,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>UHC-MS - Unversity Health Centre Management System</title>
+        <title>Login - UHC-APS</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +41,7 @@
     </head>
 
     <body>
-Welcome <%=session.getAttribute("currentSessionUser")%>
+
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -52,22 +53,19 @@ Welcome <%=session.getAttribute("currentSessionUser")%>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">UHC-MS</a>
+                    <a class="navbar-brand" href="index.php">UHC APS</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="">About</a>
+                            <a href="about.php">About</a>
                         </li>
                         <li>
                             <a href="#">Services</a>
                         </li>
                         <li>
-                            <a href="">Contact</a>
-                        </li>
-                        <li>
-                            <a href="">Logout</a>
+                            <a href="contact.php">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -84,14 +82,29 @@ Welcome <%=session.getAttribute("currentSessionUser")%>
                 </div>
             </div>            
             <div class="row">
-                <h3 align="center">Unversity Health Centre Management System</h3>
-            </div>
-            <hr>
+                <h3 align="center">University Health Center Management System</h3>
+            </div>            
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <a class="btn btn-danger btn-block" href="drAppointment.jsp">Appointments</a>                                   
-                    <a class="btn btn-danger btn-block" href="profile.jsp"></a>                                   
-                    <!--<a class="btn btn-danger btn-block" href="feedback.php">Send Feedback</a>-->
+                <div class="panel panel-default col-xs-12">                    
+                    <div class="panel-body">
+                        <form class="form-horizontal" action="<%=request.getContextPath()%>
+/LoginServlet" method="post">
+                            <div class="form-group-sm">
+                                <label for="acid">ACID</label>
+                                <input class="form-control" id="acid" placeholder="ACID" type="text" name="username" >
+                            </div>
+                            <br>
+                            <div class="form-group-sm">
+                                <label>Password</label>
+                                <input class="form-control" id="password" placeholder="**********" type="password" name="password">
+                            </div>
+                            <br>
+                            <div class="form-group-sm" align="center">
+                                <button class="btn btn-danger " name="submit" type="submit">Login</button>
+                            </div>
+                            <span></span>
+                        </form>
+                    </div>
                 </div>
             </div>
             <!-- /.row -->
@@ -108,4 +121,3 @@ Welcome <%=session.getAttribute("currentSessionUser")%>
     </body>
 
 </html>
-

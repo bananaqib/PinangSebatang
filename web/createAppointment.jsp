@@ -102,7 +102,7 @@
         <div class="container">
             <h3>Make Appointment</h3>
             <hr>
-            <form method="post" class="form-horizontal" action="saveAppointment.php">
+            <form method="post" class="form-horizontal" action="createAppointmentServlet">
                 <div class="form-group-sm">
                     <label for="appType">Appointment Type</label>
                     <select class="form-control" id="appType" name="appType">
@@ -115,6 +115,14 @@
                 <div class="form-group-sm">
                     <label for="appDate">Appointment Date</label>
                     <input class="form-control" id="datetimepicker" name="appDate" placeholder="YYYY-MM-DD H:m" type="text">
+                </div>
+                <div class="form-group-sm">
+                    <label for="appType">Doctor</label>
+                    <select class="form-control" id="appType" name="appDoc">
+                        <option value="Khairul Imran">Dr. Khairul Imran</option>
+                        <option value="Hazwan Azizan">Dr. Hazwan Azizan</option>
+                        
+                    </select>
                 </div>
                 <div class="form-group-sm">
                     <label for="appDescr">Appointment Description</label>

@@ -1,11 +1,9 @@
-<%-- 
-    Document   : doctorIndex
-    Created on : Nov 20, 2017, 7:38:33 PM
-    Author     : kerol
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <!DOCTYPE html>
 <html lang="en">
     
@@ -17,7 +15,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>UHC-MS - Unversity Health Centre Management System</title>
+        <title>UHC-MS - University Health Centre Management System</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,6 +39,7 @@
 
     <body>
 Welcome <%=session.getAttribute("currentSessionUser")%>
+
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -89,9 +88,9 @@ Welcome <%=session.getAttribute("currentSessionUser")%>
             <hr>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <a class="btn btn-danger btn-block" href="drAppointment.jsp">Appointments</a>                                   
-                    <a class="btn btn-danger btn-block" href="profile.jsp"></a>                                   
-                    <!--<a class="btn btn-danger btn-block" href="feedback.php">Send Feedback</a>-->
+                    <a class="btn btn-danger btn-block" href="createAppointment.jsp">Make Appointment</a>                                   
+                    <a class="btn btn-danger btn-block" href="viewAppointment">My Appointments</a>                                   
+                    <a class="btn btn-danger btn-block" href="profile.jsp">Profile</a>
                 </div>
             </div>
             <!-- /.row -->
