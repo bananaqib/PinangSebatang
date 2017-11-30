@@ -85,25 +85,27 @@
                 <h3 align="center">University Health Center Management System</h3>
             </div>            
             <div class="row">
-                <div class="panel panel-default col-xs-12">                    
-                    <div class="panel-body">
-                        <form class="form-horizontal" action="<%=request.getContextPath()%>
-/LoginServlet" method="post">
-                            <div class="form-group-sm">
-                                <label for="acid">ACID</label>
-                                <input class="form-control" id="acid" placeholder="ACID" type="text" name="username" >
-                            </div>
-                            <br>
-                            <div class="form-group-sm">
-                                <label>Password</label>
-                                <input class="form-control" id="password" placeholder="**********" type="password" name="password">
-                            </div>
-                            <br>
-                            <div class="form-group-sm" align="center">
-                                <button class="btn btn-danger " name="submit" type="submit">Login</button>
-                            </div>
-                            <span></span>
-                        </form>
+                <div class="col-lg-offset-3">
+                    <div class="panel panel-default col-xs-8">                    
+                        <div class="panel-body">
+                            <form class="form-horizontal" action="<%=request.getContextPath()%>
+                                  /LoginServlet" method="post">
+                                <div class="form-group-sm">
+                                    <label for="acid">ACID</label>
+                                    <input class="form-control" id="acid" placeholder="ACID" type="text" name="username" >
+                                </div>
+                                <br>
+                                <div class="form-group-sm">
+                                    <label>Password</label>
+                                    <input class="form-control" id="password" placeholder="**********" type="password" name="password">
+                                </div>
+                                <br>
+                                <div class="form-group-sm" align="center">
+                                    <button class="btn btn-danger " name="submit" type="submit">Login</button>
+                                </div>
+                                <span></span>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
