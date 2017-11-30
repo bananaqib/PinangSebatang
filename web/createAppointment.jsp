@@ -113,15 +113,20 @@
                     </select>
                 </div>
                 <div class="form-group-sm">
-                    <label for="appDate">Appointment Date</label>
-                    <input class="form-control" id="datetimepicker" name="appDate" placeholder="YYYY-MM-DD H:m" type="text">
+                    <label for="appDate">Appointment Date</label>                    
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' name="appDate" class="form-control" placeholder="YYYY-MM-DD H:m" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
                 </div>
                 <div class="form-group-sm">
                     <label for="appType">Doctor</label>
                     <select class="form-control" id="appType" name="appDoc">
                         <option value="Khairul Imran">Dr. Khairul Imran</option>
                         <option value="Hazwan Azizan">Dr. Hazwan Azizan</option>
-                        
+
                     </select>
                 </div>
                 <div class="form-group-sm">
@@ -140,8 +145,8 @@
 
 
         <script type="text/javascript">
-            $(".form_datetime").datetimepicker({
-                format: "yyyy-MM-dd hh:ii"
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
             });
         </script>            
 
