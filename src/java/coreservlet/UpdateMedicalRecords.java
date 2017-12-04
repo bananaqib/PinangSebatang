@@ -49,7 +49,7 @@ public class UpdateMedicalRecords extends HttpServlet{
   PrintWriter out = response.getWriter();
   
   HttpSession session = request.getSession(true);
-  String currentuser = (String)session.getAttribute("currentSessionUser"); 
+  String currentuser = (String)session.getAttribute("currentSessionUser"); //set current session user to a variable
   //Establish connection to MySQL database
   String firstNameDB = "";
   String lastNameDB = "";
@@ -81,7 +81,7 @@ public class UpdateMedicalRecords extends HttpServlet{
 
   //Select the data from the database
 
-  String sql1 = "select FirstName, LastName from users WHERE username='"+currentuser+"'";
+  String sql1 = "select FirstName, LastName from users WHERE username='"+currentuser+"'"; //getting firstname and lastname from database
   Statement s = connection1.createStatement();
   s.executeQuery (sql1);
   rs1 = s.getResultSet();
@@ -93,7 +93,7 @@ public class UpdateMedicalRecords extends HttpServlet{
 firstNameDB = rs1.getString("FirstName");
 lastNameDB = rs1.getString("LastName");
 
-Doctor = firstNameDB+" "+lastNameDB;
+Doctor = firstNameDB+" "+lastNameDB; //combine firstname and lastname
   }
 
   rs1.close ();
@@ -119,7 +119,7 @@ Doctor = firstNameDB+" "+lastNameDB;
 
   //Select the data from the database
 
-  String sql = "select * from appointment WHERE status= '"+Status+"' && doctor='"+Doctor+"'";
+  String sql = "select * from appointment WHERE status= '"+Status+"' && doctor='"+Doctor+"'"; //compare status Accepted and Doctor fullname in appointment table
   Statement s = connection.createStatement();
   s.executeQuery (sql);
   rs = s.getResultSet();
@@ -128,7 +128,7 @@ Doctor = firstNameDB+" "+lastNameDB;
 
   //Add records into data list
 
-  dataList.add(rs.getInt("idappointment"));
+  dataList.add(rs.getInt("idappointment")); //set result into array
   dataList.add(rs.getString("username"));
   dataList.add(rs.getString("patient_name"));
   dataList.add(rs.getString("matric"));
@@ -145,7 +145,7 @@ Doctor = firstNameDB+" "+lastNameDB;
 
   //Select the data from the database
 
-  String sql2 = "select * from appointment WHERE status= '"+Status+"' && doctor='"+Doctor+"'";
+  String sql2 = "select * from appointment WHERE status= '"+Status+"' && doctor='"+Doctor+"'"; //getting idappointment for View later on...
   Statement s2 = connection2.createStatement();
   s2.executeQuery (sql2);
   rs2 = s2.getResultSet();
@@ -154,7 +154,7 @@ Doctor = firstNameDB+" "+lastNameDB;
 
   //Add records into data list
 
-  dataList1.add(rs2.getString("idappointment"));
+  dataList1.add(rs2.getString("idappointment")); // set matric in array
  
   }
   }
@@ -165,12 +165,12 @@ Doctor = firstNameDB+" "+lastNameDB;
 
   }
 
-  request.setAttribute("data",dataList);
-  request.setAttribute("id",dataList1);
+  request.setAttribute("data",dataList); //set attribute for data array
+  request.setAttribute("id",dataList1); //set attribute for id array
   
   //Disptching request
  
-  RequestDispatcher dispatcher = request.getRequestDispatcher(page);
+  RequestDispatcher dispatcher = request.getRequestDispatcher(page);//forward to page medicalRecord.jsp
   
   if (dispatcher != null){
 

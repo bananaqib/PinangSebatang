@@ -5,7 +5,7 @@
 <title>Update Medical Record</title>
 </head>
 <body> 
-<table border="1" width="303">
+<table border="1">
 <tr>
 <td ><b>ID</b></td>
 <td ><b>USERNAME</b></td>
@@ -34,7 +34,7 @@ for (itr=data.iterator(); itr.hasNext(); )
 <% List ID=(List)request.getAttribute("id");
 for (itr1=ID.iterator(); itr1.hasNext(); )
 {%>
-<td><a href = "viewHistory.jsp?id=<%=itr1.next()%>">View</a></td><%}%>
+<td><a href = "viewHistoryServlet?ID=<%=itr1.next()%>">View</a></td><%}%>
 </tr>
 
 </table>
