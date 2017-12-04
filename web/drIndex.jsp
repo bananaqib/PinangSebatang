@@ -84,13 +84,13 @@ Welcome <%=session.getAttribute("currentSessionUser")%>
                 </div>
             </div>            
             <div class="row">
-                <h3 align="center">Unversity Health Centre Management System</h3>
+                <h3 align="center">University Health Centre Management System</h3>
             </div>
             <hr>
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <a class="btn btn-danger btn-block" href="drAppointment.jsp">Appointments</a>                                   
-                    <a class="btn btn-danger btn-block" href="profile.jsp"></a>                                   
+                    <a class="btn btn-danger btn-block" href="UpdateMedicalRecords">Update Medical Record</a>                                   
                     <!--<a class="btn btn-danger btn-block" href="feedback.php">Send Feedback</a>-->
                 </div>
             </div>

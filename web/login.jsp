@@ -88,8 +88,8 @@
                 <div class="col-lg-offset-3">
                     <div class="panel panel-default col-xs-8">                    
                         <div class="panel-body">
-                            <form class="form-horizontal" action="<%=request.getContextPath()%>
-                                  /LoginServlet" method="post">
+                            <form name="form" action="<%=request.getContextPath()%>
+/LoginServlet" method="post">
                                 <div class="form-group-sm">
                                     <label for="acid">ACID</label>
                                     <input class="form-control" id="acid" placeholder="ACID" type="text" name="username" >

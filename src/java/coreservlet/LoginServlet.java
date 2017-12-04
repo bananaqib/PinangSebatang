@@ -16,7 +16,7 @@ import coreservlet.LoginBean;
 import coreservlet.LoginDao;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
+@WebServlet(name="LoginServlet", urlPatterns={"/LoginServlet"})
 
 public class LoginServlet extends HttpServlet {
 
@@ -25,6 +25,14 @@ public class LoginServlet extends HttpServlet {
     public LoginServlet() {
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
