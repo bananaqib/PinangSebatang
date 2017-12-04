@@ -20,11 +20,15 @@
         <title>UHC-APS - Appointment Scheduling System</title>
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
+        <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />        
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/bootstrap.min.js"></script>          
+        <script src="js/moment.js"></script>          
+        <script src="js/bootstrap-datetimepicker.js"></script>          
 
 
 
