@@ -20,11 +20,15 @@
         <title>UHC-APS - Appointment Scheduling System</title>
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-datetimepicker.css" rel="stylesheet">
+        <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />        
+        <!--<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />-->        
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/bootstrap.min.js"></script>          
+        <script src="js/moment.js"></script>          
+        <script src="js/bootstrap-datetimepicker.js"></script>          
 
 
 
@@ -74,22 +78,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">UHC APS</a>
+                    <a class="navbar-brand" href="index.html">UHC APS</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="about.php">About</a>
+                            <a href="about.jsp">About</a>
                         </li>
                         <li>
                             <a href="#">Services</a>
                         </li>
                         <li>
-                            <a href="contact.php">Contact</a>
+                            <a href="contact.jsp">Contact</a>
                         </li>
                         <li>
-                            <a href="logout.php">Logout</a>
+                            <a href="logout.jsp">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -141,18 +145,12 @@
             </form>
         </div>
         <!-- /.container -->
-
-
-
         <script type="text/javascript">
             $(function () {
                 $('#datetimepicker1').datetimepicker();
             });
         </script>            
-
-
     </body>
-
 </html>
 
 
