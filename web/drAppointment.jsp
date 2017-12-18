@@ -141,7 +141,7 @@
                             <td><%=itr.next()%></td>
                             <td><%=itr.next()%></td>
                             <td><%=itr.next()%></td>
-                           
+                          
         <%    
             String Doctor = (String)request.getAttribute("doc");
             Connection con = ConnectionManager.createConnection();
@@ -150,9 +150,7 @@
             rs = st.executeQuery("select idappointment from appointment WHERE doctor = '"+ Doctor +"'");
         %>                          
                             
-                    <%  while (rs.next()) {
-                     int id = rs.getInt("idappointment");
-                    %>    
+                   
                             <td><div class="btn-group">
                                     <button type="button" class="btn btn-primary btn-xs dropdown-toggle " data-toggle="dropdown">
                                         Action <span class="caret"></span></button>
@@ -162,10 +160,11 @@
                                         <li><a href="">Reject</a></li>
                                     </ul>
                                 </div>
-                                 <%}%>
+                                    
                             </td>
+                             <%}%>
                         </tr>
-                    
+                  
                 </tbody>
             </table>
         </div>
