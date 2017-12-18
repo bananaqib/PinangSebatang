@@ -174,7 +174,7 @@ Doctor = firstNameDB+" "+lastNameDB; //combine firstname and lastname
   }
 
   request.setAttribute("data",dataList); //set attribute for data array
- // request.setAttribute("id",dataList1); //set attribute for id array
+  request.setAttribute("doc",Doctor); //set attribute for id array
   
   //Disptching request
  

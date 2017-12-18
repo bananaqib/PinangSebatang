@@ -3,6 +3,10 @@
     Created on : Nov 21, 2017, 1:48:15 AM
     Author     : kerol
 --%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="connection.ConnectionManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page language="java" import="java.util.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -137,7 +141,18 @@
                             <td><%=itr.next()%></td>
                             <td><%=itr.next()%></td>
                             <td><%=itr.next()%></td>
-                            <%}%>
+                           
+        <%    
+            String Doctor = (String)request.getAttribute("doc");
+            Connection con = ConnectionManager.createConnection();
+            Statement st = con.createStatement();
+            ResultSet rs;
+            rs = st.executeQuery("select idappointment from appointment WHERE doctor = '"+ Doctor +"'");
+        %>                          
+                            
+                    <%  while (rs.next()) {
+                     int id = rs.getInt("idappointment");
+                    %>    
                             <td><div class="btn-group">
                                     <button type="button" class="btn btn-primary btn-xs dropdown-toggle " data-toggle="dropdown">
                                         Action <span class="caret"></span></button>
@@ -147,6 +162,7 @@
                                         <li><a href="">Reject</a></li>
                                     </ul>
                                 </div>
+                                 <%}%>
                             </td>
                         </tr>
                     
