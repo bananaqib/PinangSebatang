@@ -43,6 +43,7 @@
 
 </tr>
 </table>
-
+<input type="submit" value="Add" 
+    onclick="window.location='addHistory.jsp?matric=<%=(String)request.getAttribute("matric1")%>'"/>  
 </body>
 </html>
