@@ -87,12 +87,17 @@ public class AddPrescription extends HttpServlet {
         descr = request.getParameter("descr");
         try {
             Connection con = ConnectionManager.createConnection();
-            PreparedStatement pst = con.prepareStatement("insert into appointment(name, descr, quantity,) values(?,?,?)");
+            PreparedStatement pst = con.prepareStatement("insert into prescription (name, descr, quantity) values(?,?,?)");
             pst.setString(1, name);
             pst.setString(2, descr);
             pst.setInt(3, qty);
-
-            showConfirmation(request, out);
+            int i = pst.executeUpdate();
+            if (i != 0) {
+                showConfirmation(request, out);
+            } else {
+                out.println("failed to insert the data");
+            }
+            
 //            request.getRequestDispatcher("/viewPrescription.jsp").forward(request, response);
         } catch (Exception e) {
             out.println(e);
@@ -103,8 +108,8 @@ public class AddPrescription extends HttpServlet {
     private void showConfirmation(HttpServletRequest request,
             PrintWriter out) {
         out.println("<script type=\'text/javascript\'>");
-        out.println("alert('Book Succesfully added');");
-        out.println("location='./bookForm.jsp'");
+        out.println("alert('Prescription Successfully added');");
+        out.println("location='./viewPrescription.jsp'");
         out.println("</script>");
     }
 
