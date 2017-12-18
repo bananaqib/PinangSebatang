@@ -16,7 +16,7 @@ import coreservlet.LoginBean;
 import coreservlet.LoginDao;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet(name="LoginServlet", urlPatterns={"/LoginServlet"})
+@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
 
 public class LoginServlet extends HttpServlet {
 
@@ -61,6 +61,14 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("firstName", firstName);
                 request.setAttribute("lastName", lastName);
                 request.getRequestDispatcher("/patientIndex.jsp").forward(request, response);
+            } else if (userValidate.equals("3")) {
+                System.out.println("Staff's Home");
+                HttpSession session = request.getSession();
+                session.setAttribute("currentSessionUser", userName);
+                request.setAttribute("userName", userName);
+                request.setAttribute("firstName", firstName);
+                request.setAttribute("lastName", lastName);
+                request.getRequestDispatcher("/staffIndex.jsp").forward(request, response);
             } else {
                 System.out.println("Error message = " + userValidate);
                 request.setAttribute("errMessage", userValidate);
