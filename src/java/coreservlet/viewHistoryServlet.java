@@ -33,8 +33,8 @@ public class viewHistoryServlet extends HttpServlet {
 {
   
   PrintWriter out = response.getWriter();
- 
-int id = Integer.parseInt(request.getParameter("ID"));
+String id = request.getParameter("ID"); 
+//int id = Integer.parseInt(request.getParameter("ID"));
 Connection con = null;
 Statement statement = null;
 ResultSet resultSet = null;
@@ -51,7 +51,7 @@ try
 {
 con = ConnectionManager.createConnection();
 statement = con.createStatement();
-resultSet = statement.executeQuery("select idappointment from profile");
+resultSet = statement.executeQuery("select * from profile WHERE idappointment = '"+ id +"'");
 while(resultSet.next())
 {
 idappointmentDB = resultSet.getString("idappointment");
@@ -77,15 +77,7 @@ request.setAttribute("app_desc1", app_descDB);
 request.getRequestDispatcher("/viewHistory.jsp").forward(request, response);
 }
 
-else
-{request.setAttribute("idappointment1", idappointmentDB);
-request.setAttribute("username1", usernameDB);
-request.setAttribute("patient_name1", patient_nameDB);
-request.setAttribute("address1", addressDB);
-request.setAttribute("matric1", matricDB);
-request.setAttribute("phone1", phoneDB);
-request.setAttribute("app_type1", app_typeDB);
-request.setAttribute("app_desc1", app_descDB);}
+
 //if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("1"))
 //return "1";
 //else if(userName.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("2"))

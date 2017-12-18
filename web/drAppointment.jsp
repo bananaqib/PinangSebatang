@@ -3,7 +3,7 @@
     Created on : Nov 21, 2017, 1:48:15 AM
     Author     : kerol
 --%>
-
+<%@page language="java" import="java.util.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,25 +113,31 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Username</th>
                         <th>Patient Name</th>
                         <th>Date</th>
                         <th>Type</th>
-                        <th>Description</th>
-                        <th>Doctor Assigned</th>
+                        <th>Matric</th>
+                        <th>Description</th>                    
                         <th>Status</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <%Iterator itr;%>
+                    <% List data = (List) request.getAttribute("data");
+                        for (itr = data.iterator(); itr.hasNext();) {
+                    %>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><%=itr.next()%></td>
+                            <td><%=itr.next()%></td>
+                            <td><%=itr.next()%></td>
+                            <td><%=itr.next()%></td>
+                            <td><%=itr.next()%></td>
+                            <td><%=itr.next()%></td>
+                            <td><%=itr.next()%></td>
+                            <td><%=itr.next()%></td>
+                            <%}%>
                             <td><div class="btn-group">
                                     <button type="button" class="btn btn-primary btn-xs dropdown-toggle " data-toggle="dropdown">
                                         Action <span class="caret"></span></button>

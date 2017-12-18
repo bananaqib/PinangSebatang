@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package coreservlet;
 
 import java.io.*;
@@ -8,8 +13,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 
-@WebServlet(name = "UpdateMedicalRecords", urlPatterns = {"/UpdateMedicalRecords"})
-public class UpdateMedicalRecords extends HttpServlet{
+@WebServlet(name = "viewdrAppointment", urlPatterns = {"/viewdrAppointment"})
+public class viewdrAppointment extends HttpServlet{
 
 
 
@@ -17,8 +22,8 @@ public class UpdateMedicalRecords extends HttpServlet{
 
   //Setting JSP page
 
-  String page="medicalRecord.jsp";
-  String Status = "Accepted";
+  String page="drAppointment.jsp";
+  //String Status = "";
   String Doctor = "";
 
     /**
@@ -121,7 +126,7 @@ Doctor = firstNameDB+" "+lastNameDB; //combine firstname and lastname
 
   //Select the data from the database
 
-  String sql = "select * from appointment WHERE status= '"+Status+"' && doctor='"+Doctor+"'"; //compare status Accepted and Doctor fullname in appointment table
+  String sql = "select * from appointment WHERE doctor='"+Doctor+"'"; //compare status Accepted and Doctor fullname in appointment table
   Statement s = connection.createStatement();
   s.executeQuery (sql);
   rs = s.getResultSet();
@@ -133,26 +138,27 @@ Doctor = firstNameDB+" "+lastNameDB; //combine firstname and lastname
   dataList.add(rs.getInt("idappointment")); //set result into array
   dataList.add(rs.getString("username"));
   dataList.add(rs.getString("patient_name"));
-  dataList.add(rs.getString("matric"));
-  dataList.add(rs.getString("type"));
   dataList.add(rs.getString("date"));
+  dataList.add(rs.getString("type"));
+  dataList.add(rs.getString("matric"));
   dataList.add(rs.getString("description"));
+  dataList.add(rs.getString("status"));
  
   }
   Class.forName("com.mysql.jdbc.Driver");
 
   // Get a Connection to the database
 
-  connection2 = DriverManager.getConnection(connectionURL2, "root", "1234"); 
+ connection2 = DriverManager.getConnection(connectionURL2, "root", "1234"); 
 
   //Select the data from the database
 
-  String sql2 = "select * from appointment WHERE status= '"+Status+"' && doctor='"+Doctor+"'"; //getting idappointment for View later on...
+  String sql2 = "select * from appointment WHERE status= doctor='"+Doctor+"'"; //getting idappointment for View later on...
   Statement s2 = connection2.createStatement();
   s2.executeQuery (sql2);
   rs2 = s2.getResultSet();
 
-  while (rs2.next()){
+ while (rs2.next()){
 
   //Add records into data list
 
@@ -168,7 +174,7 @@ Doctor = firstNameDB+" "+lastNameDB; //combine firstname and lastname
   }
 
   request.setAttribute("data",dataList); //set attribute for data array
-  request.setAttribute("id",dataList1); //set attribute for id array
+ // request.setAttribute("id",dataList1); //set attribute for id array
   
   //Disptching request
  

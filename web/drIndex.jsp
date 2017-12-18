@@ -89,7 +89,7 @@ Welcome <%=session.getAttribute("currentSessionUser")%>
             <hr>
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <a class="btn btn-danger btn-block" href="drAppointment.jsp">Appointments</a>                                   
+                    <a class="btn btn-danger btn-block" href="viewdrAppointment">Appointments</a>                                   
                     <a class="btn btn-danger btn-block" href="UpdateMedicalRecords">Update Medical Record</a>                                   
                     <!--<a class="btn btn-danger btn-block" href="feedback.php">Send Feedback</a>-->
                 </div>
