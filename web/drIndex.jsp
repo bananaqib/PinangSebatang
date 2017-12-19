@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <head>
 
         <meta charset="utf-8">
@@ -40,7 +40,7 @@
     </head>
 
     <body>
-Welcome <%=session.getAttribute("currentSessionUser")%>
+        <p align="center">Welcome <%=session.getAttribute("currentSessionUser")%></p>
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -58,16 +58,13 @@ Welcome <%=session.getAttribute("currentSessionUser")%>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="">About</a>
+                            <a href="about.jsp">About</a>
                         </li>
                         <li>
-                            <a href="#">Services</a>
+                            <a href="contact.jsp">Contact</a>
                         </li>
                         <li>
-                            <a href="">Contact</a>
-                        </li>
-                        <li>
-                            <a href="">Logout</a>
+                            <a href="./Logout">Logout</a>
                         </li>
                     </ul>
                 </div>

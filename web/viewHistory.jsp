@@ -21,8 +21,8 @@
             String mat = (String)request.getAttribute("matric1");
             
             Connection con = ConnectionManager.createConnection();
-            Statement st = con.createStatement();
-            ResultSet rs;
+                Statement st = con.createStatement();
+                ResultSet rs;
             rs = st.executeQuery("select * from medical WHERE matric = '"+ mat +"'");
         %>
 

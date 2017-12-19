@@ -51,19 +51,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">UHC APS</a>
+                    <a class="navbar-brand" href="index.html">UHC APS</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="about.php">About</a>
-                        </li>
+                            <a href="about.jsp">About</a>
+                        </li>                        
                         <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
-                            <a href="contact.php">Contact</a>
+                            <a href="contact.jsp">Contact</a>
                         </li>
                     </ul>
                 </div>

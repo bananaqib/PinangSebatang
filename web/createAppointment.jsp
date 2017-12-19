@@ -87,13 +87,10 @@
                             <a href="about.jsp">About</a>
                         </li>
                         <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
                             <a href="contact.jsp">Contact</a>
                         </li>
                         <li>
-                            <a href="logout.jsp">Logout</a>
+                            <a href="./Logout">Logout</a>
                         </li>
                     </ul>
                 </div>
