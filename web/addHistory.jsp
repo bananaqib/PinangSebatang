@@ -30,16 +30,16 @@
 
         %>
 
-<FORM ACTION="./viewHistory.jsp">
+<FORM ACTION="givePrescription" method="post">
     Name: <% out.print(Fullname); %><br>
     Matric: <% out.print(matric1); %><br>
-    Illness:  <INPUT TYPE="TEXT" NAME="illness"><BR>
-   
-  <select name="cars">
-    <option value="Fever">Fever</option>
-    <option value="Migrain">Migrain</option>
-    <option value="Dental">Dental</option>
-    <option value="X-ray">X-ray</option>
+    
+    <input type="hidden" value="<% out.print(matric1); %>" name='mat'>
+  <select name="ubat">
+    <option value="1">Cough Syrup</option>
+    <option value="2">Panadol</option>
+    <option value="3">Dental Floss</option>
+    <option value="4">Lozenge</option>
   </select>
   <br><br>
   

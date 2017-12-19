@@ -36,7 +36,7 @@
          %>  
     
     
-<td><%= prescdb %> &nbsp; <%= date %> <%}%></td>
+<td><%= prescdb %> &nbsp; <%= date %> <%};%></td>
                                     
                                      
 
