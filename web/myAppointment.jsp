@@ -1,6 +1,5 @@
 
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.Iterator"%>
+<%@page import="java.util.*"%>
 <%@page import="java.sql.ResultSetMetaData"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -28,6 +27,22 @@
             body {
                 padding-top: 70px;
                 /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+            }
+
+            th{
+                background-color: #990000;
+                color: white;
+            }
+
+            .btn-primary{
+                color: #fff;
+                background-color: #000000;
+                border-color: #000000;
+            }
+
+            .btn-primary:hover{
+                background: #000000;
+                color: #ff0000
             }
         </style>
 
@@ -73,28 +88,40 @@
             <!-- /.container -->
         </nav>
 
-        
-        <div class="container">
-            <table width=25% border=1>
-                <th>Type</th>
-                <th>Description</th>
-                <th>Date</th>
-                <th>Doctor in Charge</th>
-                <%
-                    Iterator itr;
-                    ArrayList<String> data = (ArrayList) request.getAttribute("data");
-//                    out.println(data.toString());
 
-                    for (itr = data.iterator(); itr.hasNext();) {
-                %>
-                <tr>
-                    <td><%=itr.next()%></td>
-                    <td><%=itr.next()%></td>                
-                    <td><%=itr.next()%></td>
-                    <td><%=itr.next()%></td>                    
-                </tr>
-                <%}%>
-            </table>
+        <div class="container">
+            <h2>My Appointments</h2>
+            <hr>
+            <div class="row">
+                <table class="table table-condensed table-striped" align="center">
+                    <th>No.</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Doctor in Charge</th>
+                    <th>Status</th>
+                        <%
+                            Iterator itr;
+                            List data = (List) request.getAttribute("data");
+                            //                    out.println(data.toString());
+                            int i = 0;
+                            for (itr = data.iterator(); itr.hasNext();) {
+                        %>
+                    <tr>
+                        <td><% i++;
+                            out.println(i);%></td>
+                        <td><%=itr.next()%></td>
+                        <td><%=itr.next()%></td>                
+                        <td><%=itr.next()%></td>
+                        <td><%=itr.next()%></td>                    
+                        <td><%=itr.next()%></td>                    
+                    </tr>
+                    <%}%>
+                </table>
+            </div>
+            <div class="row">
+                <a class="btn btn-danger" href="patientIndex.jsp">Back</a>
+            </div>
         </div>
 
         <script src="js/jquery.js"></script>

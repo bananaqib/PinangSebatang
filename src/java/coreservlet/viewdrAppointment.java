@@ -56,7 +56,6 @@ public class viewdrAppointment extends HttpServlet {
 
         String connectionURL = "jdbc:mysql://localhost:3306/logintest";
         Connection connection = null;
-        Connection connection2 = null;
         ResultSet rs;
         response.setContentType("text/html");
         List dataList = new ArrayList();
@@ -66,7 +65,6 @@ public class viewdrAppointment extends HttpServlet {
         String connectionURL2 = "jdbc:mysql://localhost:3306/logintest";
         Connection connection1 = null;
         ResultSet rs1;
-        ResultSet rs2;
 
         try {
 
@@ -117,8 +115,7 @@ public class viewdrAppointment extends HttpServlet {
             while (rs.next()) {
 
                 //Add records into data list
-                dataList.add(rs.getInt("idappointment")); //set result into array
-                dataList.add(rs.getString("username"));
+                dataList.add(rs.getInt("idappointment")); //set result into array                
                 dataList.add(rs.getString("patient_name"));
                 dataList.add(rs.getString("date"));
                 dataList.add(rs.getString("type"));
@@ -131,8 +128,6 @@ public class viewdrAppointment extends HttpServlet {
             }
             Class.forName("com.mysql.jdbc.Driver");
 
-            // Get a Connection to the database
-            connection2 = DriverManager.getConnection(connectionURL2, "root", "1234");
 
         } catch (Exception e) {
 

@@ -20,6 +20,10 @@
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="js/jquery.js"></script> 
+        <script src="js/bootstrap.js"></script>
+        <!--<script src="js/bootstrap.min.js"></script>-->     
+
 
         <!-- Custom CSS -->
         <style>
@@ -27,7 +31,25 @@
                 padding-top: 70px;
                 /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
             }
+
+            th{
+                background-color: #990000;
+                color: white;
+            }
+
+            .btn-primary{
+                color: #fff;
+                background-color: #000000;
+                border-color: #000000;
+            }
+
+            .btn-primary:hover{
+                background: #000000;
+                color: #ff0000
+            }
         </style>
+
+
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -71,11 +93,14 @@
             </div>
             <!-- /.container -->
         </nav>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <table border="1" >
-                    <tr><td ><b>Username</b></td><td ><%=request.getAttribute("username1")%></td></tr>
-                    <tr><td ><b>Name</b></td><td ><%=request.getAttribute("patient_name1")%></td></tr>
+                <h2>Patient Medical History</h2>
+            </div>
+            <hr>
+            <div class="row">
+                <table class="table table-bordered" align="center">                    
+                    <tr><td ><b>Patient Name</b></td><td ><%=request.getAttribute("patient_name1")%></td></tr>
                     <tr><td ><b>Address</b></td><td ><%=request.getAttribute("address1")%></td></tr>
                     <tr><td ><b>Matric</b></td><td ><%=request.getAttribute("matric1")%></td></tr>
                     <tr><td ><b>Phone No</b></td><td ><%=request.getAttribute("phone1")%></td></tr>
@@ -90,28 +115,58 @@
                 rs = st.executeQuery("select * from medical WHERE matric = '" + mat + "'");
             %>
             <div class="row">
-                
-                        <tr><td><b>Prescription History</b></td></tr>
+                <h3>Prescription History</h3>
+                <table class="table table-striped" align="center">
+                    <tr>
+                        <th>Prescription</th>
+                        <th>Date Given</th>
+                    </tr>                    
+                    <%  while (rs.next()) {
+                            String matricdb = rs.getString("matric");
+                            String prescdb = rs.getString("prescription");
+                            String date = rs.getString("date");
+                    %>  
 
-                        <%  while (rs.next()) {
-                                String matricdb = rs.getString("matric");
-                                String prescdb = rs.getString("prescription");
-                                String date = rs.getString("date");
-                        %>  
+                    <tr>
+                        <td><%= prescdb%></td>
+                        <td><%= date%> </td>
+                    </tr>
+                    <%};%>
+                </table>
 
-                        <tr>
-                            <td></td><td><%= prescdb%> &nbsp; <%= date%> </td>
-                        </tr>
-                        <%};%>
-
-
-
-
-                    </table>
-                
             </div>
-            <input type="submit" value="Add" 
-                   onclick="window.location = 'addHistory.jsp?matric=<%=(String) request.getAttribute("matric1")%>'"/>
+                <div class="row">
+                <a class="btn btn-danger" href="./UpdateMedicalRecords">Back</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addhistory">Add</button>
+            </div>
+            
+        
+        </div>
+
+        <div class="modal fade" id="addhistory" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <H4 class="modal-title">Add Prescription</H4>                        
+                    </div>
+                    <div class="modal-body">
+                        <FORM class="form" ACTION="givePrescription" method="post">
+                            <input type="hidden" value="<%= mat%>" name='mat'>
+                            <div class="form-group">
+                            <label for="ubat">Prescription</label>
+                            <select class="form-control" name="ubat">
+                                <option value="1">Cough Syrup</option>
+                                <option value="2">Panadol</option>
+                                <option value="3">Dental Floss</option>
+                                <option value="4">Lozenge</option>
+                            </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary" >Submit</button>
+                        </FORM>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>

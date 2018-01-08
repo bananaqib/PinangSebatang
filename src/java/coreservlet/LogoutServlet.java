@@ -20,8 +20,11 @@ public class LogoutServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         session.invalidate();
-
-        out.print("You are successfully logged out!");
+        out.println("<script type=\'text/javascript\'>");
+        out.println("alert('You are successfully logged out!');");
+        out.println("location='login.jsp'");
+        out.println("</script>");
+       
 
         out.close();
     }

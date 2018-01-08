@@ -55,14 +55,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                            <a href="about.jsp">About</a>
-                        </li>
-                        <li>
-                            <a href="contact.jsp">Contact</a>
-                        </li>
-                        <li>
-                            <a href="./Logout">Logout</a>
-                        </li>
+                        <a href="about.jsp">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.jsp">Contact</a>
+                    </li>
+                    <li>
+                        <a href="./Logout">Logout</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -70,44 +70,48 @@
         <!-- /.container -->
     </nav>    
     <div class="container">
-        <h2 align="center">Create Prescription</h2>
-        <hr>
-        <br>
-        <form method="post" action="AddPrescription" class="form-horizontal">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="form-group-sm">
-                        <label for="name">Name :</label>
-                        <input class="form-control" type="text" name="name"><br>
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4>Create Prescription</h4></div>
+            <div class="panel-body">
+                <form method="post" action="AddPrescription" class="form-horizontal">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group-sm">
+                                <label for="name">Name :</label>
+                                <input class="form-control" type="text" name="name"><br>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-lg-2">
-                    <div class="form-group-sm">
-                        <label for="qty">Quantity : </label>
-                        <input class="form-control" type="text" name="qty"><br>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group-sm">
+                                <label for="qty">Quantity : </label>
+                                <input class="form-control" type="text" name="qty"><br>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="form-group-sm">
-                        <label for="descr">Description : </label>
-                        <textarea class="form-control" name="descr" rows="10" cols="30"></textarea>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="form-group-sm">
+                                <label for="descr">Description : </label>
+                                <textarea class="form-control" name="descr" rows="10" cols="30"></textarea>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <a class="btn btn-danger" href="staffIndex.jsp">Back</a>
+                            <input class="btn btn-primary" type="submit">
+                        </div>
+                    </div>
+                </form>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-lg-4">
-                    <a class="btn btn-danger" href="staffIndex.jsp">Back</a>
-                    <input class="btn btn-primary" type="submit">
-                </div>
-            </div>
-        </form>
+        </div>
+
+
         <!--<p align="center"><a class="btn btn-danger" href="staffIndex.jsp">Back</a></p>-->
     </div>
 </body>

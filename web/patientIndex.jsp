@@ -5,6 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
+
 <html lang="en">
 
     <head>
@@ -102,14 +103,16 @@ and open the template in the editor.
 
         <!-- jQuery Version 1.11.1 -->
         <script src="js/jquery.js"></script>
-
+       
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
+       
         <script type="text/javascript">
             $(document).ready(function () {
                 $('#welcome').delay(3000).fadeOut();
             });
         </script>
+               
     </body>
 
 </html>

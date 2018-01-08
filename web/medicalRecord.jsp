@@ -42,9 +42,7 @@
                 background: #000000;
                 color: #ff0000
             }
-            /*table { width: 80%}*/
-            th {font-size: 12px}
-            td { font-size: 11px; }
+
         </style>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -101,41 +99,49 @@
                 <h3 align="center">Unversity Health Centre Management System</h3>
             </div>
             <hr>
-            <table class="table-responsive table-condensed table-striped" align="center">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>USERNAME</th>
-                        <th>PATIENT NAME</th>
-                        <th>MATRIC</th>
-                        <th>TYPE</th>
-                        <th>DATE</th>
-                        <th>DESCRIPTION</th>
-                        <th>VIEW</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%Iterator itr;%>
-                    <% List data = (List) request.getAttribute("data");
-                        List matric = (List) request.getAttribute("matric");
-                        Iterator itr1 = matric.iterator();
+            <div class="row">
+                <table class="table table-condensed table-striped" align="center">
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>USERNAME</th>
+                            <th>PATIENT NAME</th>
+                            <th>MATRIC</th>
+                            <th>TYPE</th>
+                            <th>DATE</th>
+                            <th>DESCRIPTION</th>
+                            <th>VIEW</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%Iterator itr;%>
+                        <% List data = (List) request.getAttribute("data");
+                            List matric = (List) request.getAttribute("matric");
+                            Iterator itr1 = matric.iterator();
+                            int i = 0;
                             for (itr = data.iterator(); itr.hasNext();) {
-                    %>
-                    <tr>
-                        <td ><%=itr.next()%></td>
-                        <td ><%=itr.next()%></td>
-                        <td ><%=itr.next()%></td>
-                        <td ><%=itr.next()%></td>
-                        <td ><%=itr.next()%></td>
-                        <td ><%=itr.next()%></td>
-                        <td ><%=itr.next()%></td>                                               
+                        %>
+                        <tr>
+                            <td ><% i++;
+                                itr.next();
+                                out.println(i);%></td>
+                            <td ><%=itr.next()%></td>
+                            <td ><%=itr.next()%></td>
+                            <td ><%=itr.next()%></td>
+                            <td ><%=itr.next()%></td>
+                            <td ><%=itr.next()%></td>
+                            <td ><%=itr.next()%></td>                                               
                             <!--for (itr1 = ID.iterator(); itr1.hasNext();) {%>-->
-                        <td><a href = <%= "\"viewHistoryServlet?matric=" + itr1.next() + "\""%>>View</a></td>
-                        <%}%>                        
-                    </tr>
+                            <td><a href = <%= "\"viewHistoryServlet?matric=" + itr1.next() + "\""%>>View</a></td>
+                            <%}%>                        
+                        </tr>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <a class="btn btn-danger" href="drIndex.jsp">Back</a>
+            </div>
         </div>
         <!-- /.container -->
 
