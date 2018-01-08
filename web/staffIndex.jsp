@@ -74,7 +74,13 @@ and open the template in the editor.
 
         <!-- Page Content -->
         <div class="container">
-            <div class="alert alert-success alert-dismissable">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#welcome').delay(10).fadeOut();
+                });
+            </script>
+            <div class="alert alert-success alert-dismissable" id="welcome">
                 Welcome <strong><%=session.getAttribute("currentSessionUser")%>!</strong>
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
             </div>

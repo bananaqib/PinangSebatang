@@ -40,7 +40,7 @@
     </head>
 
     <body>
-        <p align="center">Welcome <%=session.getAttribute("currentSessionUser")%></p>
+
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -76,6 +76,12 @@
         <!-- Page Content -->
         <div class="container">
             <div class="row">
+                <div class="alert alert-success alert-dismissable" id="welcome">                    
+                    Welcome <strong><%=session.getAttribute("currentSessionUser")%>!</strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>                    
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-12 text-center">
                     <img src="images/UTM.gif" alt="logo" width="100" height="100">
                 </div>
@@ -84,12 +90,13 @@
                 <h3 align="center">University Health Centre Management System</h3>
             </div>
             <hr>
-            <div class="row">
-                <div class="col-lg-12 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 text-center"></div>                    
+                <div class="col-lg-6 text-center">                  
                     <a class="btn btn-danger btn-block" href="viewdrAppointment">Appointments</a>                                   
-                    <a class="btn btn-danger btn-block" href="UpdateMedicalRecords">Update Medical Record</a>                                   
-                    <!--<a class="btn btn-danger btn-block" href="feedback.php">Send Feedback</a>-->
+                    <a class="btn btn-danger btn-block" href="UpdateMedicalRecords">Update Medical Record</a>                    
                 </div>
+                <div class="col-lg-3 text-center"></div>
             </div>
             <!-- /.row -->
 
@@ -101,7 +108,11 @@
 
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
-
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#welcome').delay(3000).hide();
+            });
+        </script>
     </body>
 
 </html>
