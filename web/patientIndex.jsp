@@ -107,7 +107,7 @@ and open the template in the editor.
         <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
-                $('#welcome').delay(3000).hide();
+                $('#welcome').delay(3000).fadeOut();
             });
         </script>
     </body>

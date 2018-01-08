@@ -117,7 +117,9 @@
                 <tbody>
                     <%Iterator itr;%>
                     <% List data = (List) request.getAttribute("data");
-                        for (itr = data.iterator(); itr.hasNext();) {
+                        List matric = (List) request.getAttribute("matric");
+                        Iterator itr1 = matric.iterator();
+                            for (itr = data.iterator(); itr.hasNext();) {
                     %>
                     <tr>
                         <td ><%=itr.next()%></td>
@@ -126,15 +128,12 @@
                         <td ><%=itr.next()%></td>
                         <td ><%=itr.next()%></td>
                         <td ><%=itr.next()%></td>
-                        <td ><%=itr.next()%></td>
-                        <%}%>
-                        <%Iterator itr1;%>
-                        <% List ID = (List) request.getAttribute("id");
-                            for (itr1 = ID.iterator(); itr1.hasNext();) {%>
-                        <td><a href = <%= "\"viewHistoryServlet?ID=" + itr1.next() + "\""%>>View</a></td>
-                        
+                        <td ><%=itr.next()%></td>                                               
+                            <!--for (itr1 = ID.iterator(); itr1.hasNext();) {%>-->
+                        <td><a href = <%= "\"viewHistoryServlet?matric=" + itr1.next() + "\""%>>View</a></td>
+                        <%}%>                        
                     </tr>
-                    <%}%>
+
                 </tbody>
             </table>
         </div>

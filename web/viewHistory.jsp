@@ -79,8 +79,6 @@
                     <tr><td ><b>Address</b></td><td ><%=request.getAttribute("address1")%></td></tr>
                     <tr><td ><b>Matric</b></td><td ><%=request.getAttribute("matric1")%></td></tr>
                     <tr><td ><b>Phone No</b></td><td ><%=request.getAttribute("phone1")%></td></tr>
-                    <tr><td ><b>Appointment Type</b></td><td ><%=request.getAttribute("app_type1")%></td></tr>
-                    <tr><td ><b>Appointment Description</b></td><td ><%=request.getAttribute("app_desc1")%></td></tr>
                 </table>
             </div>
             <%

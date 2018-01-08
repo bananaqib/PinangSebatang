@@ -12,6 +12,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import connection.ConnectionManager;
+import java.sql.*;
 
 /**
  *
@@ -37,7 +39,7 @@ public class approveAppointmentServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet approveAppointment</title>");            
+            out.println("<title>Servlet approveAppointment</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet approveAppointment at " + request.getContextPath() + "</h1>");
@@ -58,8 +60,29 @@ public class approveAppointmentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        PrintWriter out = response.getWriter();
+        String id = request.getParameter("id");
+
+        try {
+            Connection con = ConnectionManager.createConnection();
+            Statement st = con.createStatement();
+            st.executeUpdate("UPDATE appointment SET status = 'Accepted' WHERE idappointment = '" + id + "'");
+            showConfirmation(request, out);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
+    
+    private void showConfirmation(HttpServletRequest request,
+            PrintWriter out) {
+        out.println("<script type=\'text/javascript\'>");
+        out.println("alert('Appointment has been accepted');");
+        out.println("location='./viewdrAppointment'");
+        out.println("</script>");
+    }
+    
+    
 
     /**
      * Handles the HTTP <code>POST</code> method.

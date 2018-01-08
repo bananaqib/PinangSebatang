@@ -94,7 +94,7 @@ public class givePrescription extends HttpServlet {
             Statement st3 = con.createStatement();
             ResultSet rs = st.executeQuery("select * from prescription where id='" + ubat + "'");
 
-            ResultSet rs1 = st1.executeQuery("select idappointment from profile where matric='" + mat + "'");
+            ResultSet rs1 = st1.executeQuery("select matric from profile where matric='" + mat + "'");
 
             while (rs.next()) {
                 namePresc = rs.getString("name");
@@ -127,10 +127,10 @@ public class givePrescription extends HttpServlet {
                 if (i != 0 && q != 0) {
 
                     if (rs1.next()) {
-                        String id = rs1.getString("idappointment");
+                        String matric = rs1.getString("matric");
                         out.println("<script type=\'text/javascript\'>");
                         out.println("alert('Prescription Successfully added');");
-                        out.println("location='viewHistoryServlet?ID="+id+"'");
+                        out.println("location='viewHistoryServlet?matric="+matric+"'");
                         out.println("</script>");
                     }
                 } else {

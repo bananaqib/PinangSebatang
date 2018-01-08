@@ -5,8 +5,12 @@
  */
 package coreservlet;
 
+import connection.ConnectionManager;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +41,7 @@ public class cancelAppointmentServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet cancelAppointment</title>");            
+            out.println("<title>Servlet cancelAppointment</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet cancelAppointment at " + request.getContextPath() + "</h1>");
@@ -58,7 +62,26 @@ public class cancelAppointmentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        PrintWriter out = response.getWriter();
+        String id = request.getParameter("id");
+
+        try {
+            Connection con = ConnectionManager.createConnection();
+            Statement st = con.createStatement();
+            st.executeUpdate("UPDATE appointment SET status = 'Rejected' WHERE idappointment = '" + id + "'");
+            showConfirmation(request, out);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showConfirmation(HttpServletRequest request,
+            PrintWriter out) {
+        out.println("<script type=\'text/javascript\'>");
+        out.println("alert('Appointment has been rejected');");
+        out.println("location='./viewdrAppointment'");
+        out.println("</script>");
     }
 
     /**

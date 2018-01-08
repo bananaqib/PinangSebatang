@@ -5,6 +5,7 @@
  */
 package coreservlet;
 
+import bean.PrescriptionBean;
 import connection.ConnectionManager;
 import java.io.IOException;
 import java.io.PrintWriter;

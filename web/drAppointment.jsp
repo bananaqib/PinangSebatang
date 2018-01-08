@@ -125,43 +125,46 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%Iterator itr;%>
+                    <%Iterator itr, itr2, itr3;%>
                     <% List data = (List) request.getAttribute("data");
+                        List data2 = (List) request.getAttribute("data1");
+                        List data3 = (List) request.getAttribute("data1");
+                        itr2 = data2.iterator();
+                        itr3 = data3.iterator();
                         for (itr = data.iterator(); itr.hasNext();) {
                     %>
-                        <tr>
-                            <td><%=itr.next()%></td>
-                            <td><%=itr.next()%></td>
-                            <td><%=itr.next()%></td>
-                            <td><%=itr.next()%></td>
-                            <td><%=itr.next()%></td>
-                            <td><%=itr.next()%></td>
-                            <td><%=itr.next()%></td>
-                            <td><%=itr.next()%></td>
-                          
-        <%    
-            String Doctor = (String)request.getAttribute("doc");
-            Connection con = ConnectionManager.createConnection();
-            Statement st = con.createStatement();
-            ResultSet rs;
-            rs = st.executeQuery("select idappointment from appointment WHERE doctor = '"+ Doctor +"'");
-        %>                          
-                            
-                   
-                            <td><div class="btn-group">
-                                    <button type="button" class="btn btn-primary btn-xs dropdown-toggle " data-toggle="dropdown">
-                                        Action <span class="caret"></span></button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="">Approve</a></li>
-                                        <!--<li><button name="save" type="submit">Submit</button></li>-->
-                                        <li><a href="">Reject</a></li>
-                                    </ul>
-                                </div>
-                                    
-                            </td>
-                             <%}%>
-                        </tr>
-                  
+                    <tr>
+                        <td><%=itr.next()%></td>
+                        <td><%=itr.next()%></td>
+                        <td><%=itr.next()%></td>
+                        <td><%=itr.next()%></td>
+                        <td><%=itr.next()%></td>
+                        <td><%=itr.next()%></td>
+                        <td><%=itr.next()%></td>
+                        <td><%=itr.next()%></td>
+
+                        <%
+//                            String Doctor = (String) request.getAttribute("doc");
+//                            Connection con = ConnectionManager.createConnection();
+//                            Statement st = con.createStatement();
+//                            ResultSet rs;
+//                            rs = st.executeQuery("select idappointment from appointment WHERE doctor = '" + Doctor + "'");
+                        %>                          
+
+                        <td><div class="btn-group">
+                                <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
+                                    Action <span class="caret"></span></button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href=<%= "\"approveAppointment?id=" + itr2.next() + "\""%>>Approve</a></li>
+                                    <!--<li><button name="save" type="submit">Submit</button></li>-->
+                                    <li><a href=<%= "\"cancelAppointment?id=" + itr3.next() + "\""%>>Reject</a></li>
+                                </ul>
+                            </div>
+
+                        </td>
+                        <%}%>
+                    </tr>
+
                 </tbody>
             </table>
         </div>
@@ -195,9 +198,9 @@
 <?php
 
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
 
 

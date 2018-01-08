@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import coreservlet.LoginBean;
+import bean.LoginBean;
 import coreservlet.LoginDao;
 import javax.servlet.annotation.WebServlet;
 
