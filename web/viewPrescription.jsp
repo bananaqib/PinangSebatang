@@ -30,6 +30,23 @@
                 padding-top: 70px;
                 /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
             }
+
+            th{
+                background-color: #990000;
+                color: white;
+            }
+
+            .btn-primary{
+                color: #fff;
+                background-color: #000000;
+                border-color: #000000;
+            }
+
+            .btn-primary:hover{
+                background: #000000;
+                color: #ff0000
+            }
+
         </style>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -75,24 +92,25 @@
             <!-- /.container -->
         </nav>
         <div class="container">
-            <h2 align="center">Prescription List</h2>
+            <h2>Prescription List</h2>
             <hr>
             <br>
-            <table class="table-responsive table-condensed table-striped" align="center">
+            <table class="table table-condensed table-striped" align="center">
                 <tr>
                     <th>No.</th>
                     <th>Name</th>
                     <th>Quantity</th>
-                    <th></th>
+                    <th>Description</th>
                     <th></th>
                 </tr>
                 <%
                     Connection con = ConnectionManager.createConnection();
                     Statement st = con.createStatement();
-                    ResultSet rs = st.executeQuery("select * from prescription");;
+                    ResultSet rs = st.executeQuery("select * from prescription");
+                    int count = 1;
                     while (rs.next()) {
 
-                        int count = 0;
+                        
                         String id = rs.getString("id");
                 %>
                 <tr>

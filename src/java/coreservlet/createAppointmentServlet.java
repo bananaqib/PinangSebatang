@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import coreservlet.LoginBean;
+import bean.LoginBean;
 import java.sql.*;
 
 /**
@@ -74,8 +74,10 @@ public class createAppointmentServlet extends HttpServlet {
             pst.setString(8, apmntStatus);
             int i = pst.executeUpdate();
             if (i != 0) {
-                pw.println("Successfully insert data");
-                request.getRequestDispatcher("/patientIndex.jsp").forward(request, response);
+                pw.println("<script type=\'text/javascript\'>");
+                pw.println("alert('Appointment succesfully created');");
+                pw.println("location='./patientIndex.jsp'");
+                pw.println("</script>");
             } else {
                 pw.println("failed to insert the data");
             }

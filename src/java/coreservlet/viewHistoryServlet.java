@@ -29,7 +29,7 @@ public class viewHistoryServlet extends HttpServlet {
             throws ServletException, IOException {
 
         PrintWriter out = response.getWriter();
-        String id = request.getParameter("ID");
+        String matric = request.getParameter("matric");
 //int id = Integer.parseInt(request.getParameter("ID"));
         Connection con = null;
         Statement statement = null;
@@ -46,7 +46,7 @@ public class viewHistoryServlet extends HttpServlet {
         try {
             con = ConnectionManager.createConnection();
             statement = con.createStatement();
-            resultSet = statement.executeQuery("select * from profile WHERE idappointment = '" + id + "'");
+            resultSet = statement.executeQuery("select * from profile WHERE matric = '" + matric + "'");
             while (resultSet.next()) {
                 idappointmentDB = resultSet.getString("idappointment");
                 usernameDB = resultSet.getString("username");
@@ -54,18 +54,16 @@ public class viewHistoryServlet extends HttpServlet {
                 addressDB = resultSet.getString("address");
                 matricDB = resultSet.getString("matric");
                 phoneDB = resultSet.getString("phone");
-                app_typeDB = resultSet.getString("app_type");
-                app_descDB = resultSet.getString("app_desc");
 
-                if (idappointmentDB.equals(id)) {
+
+                if (matricDB.equals(matric)) {
                     request.setAttribute("idappointment1", idappointmentDB);
                     request.setAttribute("username1", usernameDB);
                     request.setAttribute("patient_name1", patient_nameDB);
                     request.setAttribute("address1", addressDB);
                     request.setAttribute("matric1", matricDB);
                     request.setAttribute("phone1", phoneDB);
-                    request.setAttribute("app_type1", app_typeDB);
-                    request.setAttribute("app_desc1", app_descDB);
+
 
                     request.getRequestDispatcher("/viewHistory.jsp").forward(request, response);
                 }

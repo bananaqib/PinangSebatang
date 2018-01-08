@@ -5,6 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
+
 <html lang="en">
 
     <head>
@@ -37,9 +38,7 @@ and open the template in the editor.
 
     </head>
 
-    <body>
-        <p align="center">Welcome <%=session.getAttribute("currentSessionUser")%></p>
-
+    <body>        
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
@@ -75,6 +74,12 @@ and open the template in the editor.
         <!-- Page Content -->
         <div class="container">
             <div class="row">
+                <div class="alert alert-success alert-dismissable" id="welcome">
+                    Welcome <strong><%=session.getAttribute("currentSessionUser")%>!</strong>
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-12 text-center">
                     <img src="images/UTM.gif" alt="logo" width="100" height="100">
                 </div>
@@ -83,12 +88,13 @@ and open the template in the editor.
                 <h3 align="center">Unversity Health Centre Management System</h3>
             </div>
             <hr>
-            <div class="row">
-                <div class="col-lg-12 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 text-center"></div>
+                <div class="col-lg-6 text-center">
                     <a class="btn btn-danger btn-block" href="createAppointment.jsp">Make Appointment</a>                                   
                     <a class="btn btn-danger btn-block" href="viewAppointment">My Appointments</a>                                   
-                    <a class="btn btn-danger btn-block" href="profile.jsp">Profile</a>
                 </div>
+                <div class="col-lg-3 text-center"></div>
             </div>
             <!-- /.row -->
 
@@ -97,10 +103,16 @@ and open the template in the editor.
 
         <!-- jQuery Version 1.11.1 -->
         <script src="js/jquery.js"></script>
-
+       
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
-
+       
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#welcome').delay(3000).fadeOut();
+            });
+        </script>
+               
     </body>
 
 </html>

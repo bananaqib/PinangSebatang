@@ -101,45 +101,51 @@
 
         <!-- Page Content -->
         <div class="container">
-            <h3>Make Appointment</h3>
-            <hr>
-            <form method="post" class="form-horizontal" action="createAppointmentServlet">
-                <div class="form-group-sm">
-                    <label for="appType">Appointment Type</label>
-                    <select class="form-control" id="appType" name="appType">
-                        <option value="MOC">Medical Outpatient Clinic</option>
-                        <option value="ML">Medical Laboratory</option>
-                        <option value="XR">Radiology / X-Ray</option>
-                        <option value="DSO">Dental Surgery Outpatient</option>
-                    </select>
-                </div>
-                <div class="form-group-sm">
-                    <label for="appDate">Appointment Date</label>                    
-                    <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' name="appDate" class="form-control" placeholder="YYYY-MM-DD H:m" />
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
-                    </div>
-                </div>
-                <div class="form-group-sm">
-                    <label for="appType">Doctor</label>
-                    <select class="form-control" id="appType" name="appDoc">
-                        <option value="Khairul Imran">Dr. Khairul Imran</option>
-                        <option value="Hazwan Azizan">Dr. Hazwan Azizan</option>
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Make Appointment</h4></div>
+                <div class="panel-body">
+                    <form method="post" class="form-horizontal" action="createAppointmentServlet">
+                        <div class="form-group-sm">
+                            <label for="appType">Appointment Type</label>
+                            <select class="form-control" id="appType" name="appType">
+                                <option value="MOC">Medical Outpatient Clinic</option>
+                                <option value="ML">Medical Laboratory</option>
+                                <option value="XR">Radiology / X-Ray</option>
+                                <option value="DSO">Dental Surgery Outpatient</option>
+                            </select>
+                        </div>
+                        <div class="form-group-sm">
+                            <label for="appDate">Appointment Date</label>                    
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' name="appDate" class="form-control" placeholder="YYYY-MM-DD H:m" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group-sm">
+                            <label for="appType">Doctor</label>
+                            <select class="form-control" id="appType" name="appDoc">
+                                <option value="Khairul Imran">Dr. Khairul Imran</option>
+                                <option value="Hazwan Azizan">Dr. Hazwan Azizan</option>
 
-                    </select>
+                            </select>
+                        </div>
+                        <div class="form-group-sm">
+                            <label for="appDescr">Appointment Description</label>
+                            <textarea class="form-control" id="appDescr" name="appDescr"></textarea>
+                        </div>
+                        <br>
+                        <div class="form-group-sm" align="center">
+                            <a class="btn btn-danger" href="patientIndex.jsp">Back</a>
+                            <button class="btn btn-primary " name="save" type="submit">Submit</button>
+                        </div>
+                        <!-- /.row -->
+                    </form>
                 </div>
-                <div class="form-group-sm">
-                    <label for="appDescr">Appointment Description</label>
-                    <textarea class="form-control" id="appDescr" name="appDescr"></textarea>
-                </div>
-                <br>
-                <div class="form-group-sm" align="center">
-                    <button class="btn btn-primary " name="save" type="submit">Submit</button>
-                </div>
-                <!-- /.row -->
-            </form>
+            </div>
+
+
         </div>
         <!-- /.container -->
         <script type="text/javascript">

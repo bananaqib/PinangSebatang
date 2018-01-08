@@ -74,7 +74,13 @@ and open the template in the editor.
 
         <!-- Page Content -->
         <div class="container">
-            <div class="alert alert-success alert-dismissable">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#welcome').delay(3000).fadeOut();
+                });
+            </script>
+            <div class="alert alert-success alert-dismissable" id="welcome">
                 Welcome <strong><%=session.getAttribute("currentSessionUser")%>!</strong>
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
             </div>
@@ -87,11 +93,13 @@ and open the template in the editor.
                 <h3 align="center">Unversity Health Centre Management System</h3>
             </div>
             <hr>
-            <div class="row">
-                <div class="col text-center">
+           <div class="row justify-content-center">
+                <div class="col-lg-3 text-center"></div>
+                <div class="col-lg-6 text-center">
                     <a class="btn btn-danger btn-block" href="addPrescription.jsp">Create Prescription</a>                                   
                     <a class="btn btn-danger btn-block" href="viewPrescription.jsp">Prescription List</a>                                   
                 </div>
+                <div class="col-lg-3 text-center"></div>
             </div>
             <!-- /.row -->
 

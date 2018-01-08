@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import coreservlet.LoginBean;
+import java.io.PrintWriter;
+
+import bean.LoginBean;
 import coreservlet.LoginDao;
 import javax.servlet.annotation.WebServlet;
 
@@ -38,22 +40,25 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
-
+        
+        PrintWriter out = response.getWriter();
+        
         LoginBean loginBean = new LoginBean();
         loginBean.setUserName(userName);
         loginBean.setPassword(password);
         loginBean.setfirstname(firstName);
         loginBean.setlastname(lastName);
         LoginDao loginDao = new LoginDao();
+        
         try {
             String userValidate = loginDao.authenticateUser(loginBean);
-            if (userValidate.equals("1")) {
+            if (userValidate.equals("1")) {                
                 System.out.println("Doctor's Home");
                 HttpSession session = request.getSession(); //Creating a session
                 session.setAttribute("currentSessionUser", userName); //setting session attribute
                 request.setAttribute("userName", userName);
                 request.getRequestDispatcher("/drIndex.jsp").forward(request, response);
-            } else if (userValidate.equals("2")) {
+            } else if (userValidate.equals("2")) {                
                 System.out.println("Patient's Home");
                 HttpSession session = request.getSession();
                 session.setAttribute("currentSessionUser", userName);
@@ -61,7 +66,7 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("firstName", firstName);
                 request.setAttribute("lastName", lastName);
                 request.getRequestDispatcher("/patientIndex.jsp").forward(request, response);
-            } else if (userValidate.equals("3")) {
+            } else if (userValidate.equals("3")) {                
                 System.out.println("Staff's Home");
                 HttpSession session = request.getSession();
                 session.setAttribute("currentSessionUser", userName);
@@ -70,9 +75,10 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("lastName", lastName);
                 request.getRequestDispatcher("/staffIndex.jsp").forward(request, response);
             } else {
-                System.out.println("Error message = " + userValidate);
-                request.setAttribute("errMessage", userValidate);
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                out.println("<script type=\'text/javascript\'>");
+                out.println("alert('Username or password is incorrect');");
+                out.println("location='./login.jsp'");
+                out.println("</script>");
             }
         } catch (IOException e1) {
             e1.printStackTrace();
